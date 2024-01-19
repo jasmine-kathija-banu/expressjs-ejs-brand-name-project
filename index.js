@@ -8,13 +8,13 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-  res.render("index.ejs");
+  res.render("main.ejs");
 });
 
 app.post("/submit", (req, res) => {
   const randomAdj = adj[Math.floor(Math.random() * adj.length)];
   const randomNoun = noun[Math.floor(Math.random() * noun.length)];
-  res.render("index.ejs", {
+  res.render("main.ejs", {
     adjective: randomAdj,
     noun: randomNoun,
   });
